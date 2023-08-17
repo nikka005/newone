@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}  
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous"> -->
+    
+    <title>Join</title>
+    <style>
+      html body{
+        font-size: 1.5rem;
+      }
+      .navbar{
+        margin-left: -8rem;
+      }
+      .navbar .nav-link{
+        margin-top: 10px;
+        font-weight: normal;
+      }
+        label{
+            color: #fff;
+            margin-top: 2rem;
+        }
+
+        .shadow-textarea textarea.form-control::placeholder {
+            font-weight: 400;
+        }
+        .shadow-textarea textarea.form-control {
+            padding-left: 0.8rem;
+        }
+
+        @media screen and (max-width: 720px){
+          .navbar{
+            margin-left: -1rem;
+          }
+          .navbar-nav .nav-link{
+            margin-top: 20%;
+          }
+        }
+    </style>
+
+
+{% for item in contest %}
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" id="img" src="/media/{{item.s_img1}}" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" id="img" src="/media/{{item.s_img2}}" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" id="img" src="/media/{{item.s_img3}}" alt="Third slide">
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <h1 class="header">{{item.con_name}}</h1>
+<p class="para">
+  {{item.con_des}}
+    </p>  
+    <div class="data">
+        <ul>
+          <li>Entry Fee : {{item.entry_fees}}$</li>
+            <li>Winning Price :{{item.winng_prize}}$</li>
+            <li>Contest Start Date : {{item.start_con}}</li>
+            <li>Contest End Date : {{item.start_con}}</li>
+        </ul>
+      {% endfor %}
+
+    <form action="" method="post">
+      {% csrf_token%}
+    <div class="form-upload">
+        
+        <label for="formFileLg" class="form-label">Upload Image 1:</label>
+        <input class="form-control form-control-lg" name="img1" id="formFileLg" type="file" />
+
+        <label for="formFileLg" class="form-label">Upload Image 2:</label>
+        <input class="form-control form-control-lg" name="img2" id="formFileLg" type="file" />
+
+        <label for="formFileLg" class="form-label">Upload Image 3:</label>
+        <input class="form-control form-control-lg" name="img3" id="formFileLg" type="file" />
+
+        <label for="formFileLg" class="form-label">Upload Image 4:</label>
+        <input class="form-control form-control-lg" name="img4" id="formFileLg" type="file" />
+
+        <label for="formFileLg" class="form-label">Upload Image 5:</label>
+        <input class="form-control form-control-lg" name="img5" id="formFileLg" type="file" />
+        <br><br>
+        <div class="form-group shadow-textarea">
+            <label for="exampleFormControlTextarea6">Description: </label>
+            <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
+          </div>
+    
+    </div>
+
+    <div class="bts d-flex" >
+        <button type="button" class="btn btn-success" style="font-size: 1rem;">Join Contest $100</button>
+    </div>
+    </form>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,88 @@
+body{
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/assets/images/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+      background: linear-gradient(123deg, rgba(113,16,179,1) 31%, rgba(210,119,92,1) 96%, rgba(252,176,69,1) 100%, rgba(255,153,43,1) 100%);
+  
+}
+.container_log{
+  margin: 2rem 0 0 0;
+  width: 100vw;
+  height: 100vh;
+}
+.container_log form{
+  max-width: 30vw;
+  transform: translate(100%, 10%);
+}
+.container_log h1{
+  font-size: 4rem;
+  text-align: center;
+  margin-left: -10rem;
+}
+.text-center{
+  margin: 2rem 0 1rem 0;
+}
+.text-center .but{
+  margin-left: 10rem;
+}
+
+@media screen and (max-width: 480px){
+  .container_log h1{
+    margin-left: 0;
+  }
+  .container_log form{
+    width: 30vw;
+    min-width: 60vw;
+    transform: translate(23%, 7%);         
+  }
+  .form-outline input{
+    min-width: 15rem;
+    font-size: 1rem;
+  }
+  .text-center .but{
+    margin-left: 3rem !important;
+  }
+  .text-center{
+    margin: 2rem 0 1rem 0;
+  }
+  
+}
+
+
+/* ----------------------------------------------- */
+@media screen and(min-width: 480px){
+  html body{
+      margin: 0;
+      padding: 0;
+  }
+  
+  .container_log{
+    /* margin-top: 20rem; */
+    font-size: 2.2rem;
+  }
+  .container_log form{
+    width: 30vw;
+    min-width: 60vw;
+    transform: translate(25%, 20%);         
+  }
+  .container_log h1{
+    font-size: 10rem;
+  }
+  .form-outline input{
+    min-width: 45rem;
+    font-size: 2rem;
+  }
+  form button[type=submit]{
+    min-width: 10rem;
+    font-size: 2rem;
+    padding: 7px;
+    margin: 15rem 0 10rem 0;
+  }
+  .text-center .but{
+      margin: 5rem 0 0 15rem;
+  }
+}

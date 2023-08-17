@@ -1,0 +1,35 @@
+.container{
+    margin-top: 10vh;
+    max-width: 60%;
+    font-size: 1.5rem;
+    background-color: rgba(71, 71, 71, 0.534);
+    border-radius: 10px;
+}
+.container form input, button{
+    font-size: 1.5rem;
+}
+
+form #left{
+    margin: 3rem 0 1rem 5rem;
+    position: relative;
+    
+}
+select option{
+    font-size: 1.5rem;
+}
+
+@media screen and(min-width: 480px){
+    .btn-block{
+        max-width: 10vh;
+        margin: 5rem 0 2rem 20rem;
+        font-size: 2rem;
+    }
+    .form-outline{
+        max-width: 20vh;
+        margin-left: 8rem;
+    }
+    form #left{
+        margin: 5rem 0 2rem -32rem;
+        font-size: 3rem;
+    }
+}
